@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
-import imagekit from "../../imagekit.js";
-import { db } from "../../firebaseConfig.js";
+import imagekit from "../imagekit.js";
+import { db } from "../firebaseConfig.js";
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });

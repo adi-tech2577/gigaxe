@@ -2,12 +2,14 @@ import express from "express";
 import functions from "firebase-functions";
 import admin from "firebase-admin";
 
-import postsRouter from "./posts/index.js";
-import partnersRouter from "./partners/index.js";
-import usersRouter from "./users/index.js";
+import postsRouter from "./src/posts/index.js";
+import partnersRouter from "./src/partners/index.js";
+import usersRouter from "./src/users/index.js";
 
 // Initialize Firebase Admin (only once)
-admin.initializeApp();
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
 
 // Create Express app
 const app = express();
